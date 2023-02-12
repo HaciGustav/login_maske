@@ -1,3 +1,4 @@
+import { palette } from '@mui/system';
 import styled from 'styled-components';
 
 export const FlexContainer = styled.div`
@@ -19,9 +20,11 @@ export const Navbar = styled.nav`
     height: 4rem;
     z-index: 2;
     background-color: #065ac9;
+    
     text-align: left;
     color: #fff;
     transition: all 0.2s linear;
+    
 `;
 
 export const NavDrawer = styled.div`
@@ -51,6 +54,11 @@ export const ListItem = styled.li`
     align-items: center;
     column-gap: 1rem;
     padding: 0.5rem 1rem;
+    cursor:pointer;
+    transition: all 0.2s;
+    &:hover{
+        background-color: #80808044;
+    }
 `;
 export const LiText = styled.p`
     opacity: ${(props) => (props.open ? 1 : 0)};
@@ -60,3 +68,7 @@ export const Main = styled.main`
     margin-top: 4rem;
     margin-left: 4rem;
 `;
+
+export const Line = styled.div`
+border-bottom: 1px solid #61606068;
+`

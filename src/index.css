@@ -20,9 +20,14 @@ code {
 @keyframes logoRotation {
   0%{
     transform: rotate(0);
+    outline-color: aliceblue;
+  }
+  50%{
+    outline-color: transparent;
   }
   100%{
     transform: rotate(360deg);
+    outline-color: aliceblue;
   }
   
 }
