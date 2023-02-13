@@ -19,12 +19,11 @@ export const Navbar = styled.nav`
     width: ${(props) => (props.open ? 'calc(100% - 240px)' : '100%')};
     height: 4rem;
     z-index: 2;
-    background-color: #065ac9;
-    
+    background-color: #2b6fc9d1;
+
     text-align: left;
     color: #fff;
     transition: all 0.2s linear;
-    
 `;
 
 export const NavDrawer = styled.div`
@@ -35,6 +34,9 @@ export const NavDrawer = styled.div`
     position: absolute;
     bottom: 0;
     transition: all 0.2s linear;
+    box-shadow: ${(props) =>
+        props.open &&
+        'rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px'};
 `;
 export const DrawerHeader = styled.div`
     display: flex;
@@ -54,10 +56,10 @@ export const ListItem = styled.li`
     align-items: center;
     column-gap: 1rem;
     padding: 0.5rem 1rem;
-    cursor:pointer;
+    cursor: pointer;
     transition: all 0.2s;
-    &:hover{
-        background-color: #80808044;
+    &:hover {
+        background-color: #8080802b;
     }
 `;
 export const LiText = styled.p`
@@ -70,5 +72,5 @@ export const Main = styled.main`
 `;
 
 export const Line = styled.div`
-border-bottom: 1px solid #61606068;
-`
+    border-bottom: 1px solid #61606068;
+`;
