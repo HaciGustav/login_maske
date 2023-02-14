@@ -98,9 +98,9 @@ const Navigation = () => {
                     component="main"
                     sx={{
                         display: 'flex',
-                        width: open
+                        minWidth: open
                             ? 'calc(100% - 240px)'
-                            : 'calc(100% - 2rem)',
+                            : 'calc(100% - 4rem)',
                         minHeight: 'calc(100% - 4rem)',
                         marginLeft: open ? '240px' : '4rem',
                         marginTop: '4rem',

@@ -6,9 +6,7 @@ import DataTable from '../components/table/DataTable';
 const Home = () => {
     return (
         <>
-            <div>
-                <DataTable />
-            </div>
+            <DataTable />
         </>
     );
 };

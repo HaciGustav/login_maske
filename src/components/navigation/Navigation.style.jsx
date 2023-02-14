@@ -6,6 +6,7 @@ export const FlexContainer = styled.div`
     border: 1px solid black;
     position: relative;
     min-height: 100vh;
+    width: 100%;
 `;
 
 export const Navbar = styled.nav`
@@ -29,7 +30,7 @@ export const Navbar = styled.nav`
 export const NavDrawer = styled.div`
     height: 100%;
 
-    width: ${(props) => (props.open ? '240px' : '4rem')};
+    width: ${(props) => (props.open ? '240px' : '5rem')};
     border: 1px solid #61606068;
     position: absolute;
     bottom: 0;
@@ -69,6 +70,7 @@ export const LiText = styled.p`
 export const Main = styled.main`
     margin-top: 4rem;
     margin-left: 4rem;
+    border: 1px solid red;
 `;
 
 export const Line = styled.div`

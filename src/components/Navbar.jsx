@@ -19,6 +19,12 @@ import ListItemText from '@mui/material/ListItemText';
 // import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { Outlet } from 'react-router-dom';
+import Logo from './Logo';
+import { LoginBtn, RegisterBtn } from './Buttons';
+import HomeIcon from '@mui/icons-material/Home';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import EmailIcon from '@mui/icons-material/Email';
+import TuneIcon from '@mui/icons-material/Tune';
 
 const drawerWidth = 240;
 
@@ -99,25 +105,49 @@ const Navbar = () => {
         setOpen(false);
     };
 
+    const listArr = [
+        {
+            text: 'Home',
+            icon: <HomeIcon />,
+        },
+
+        {
+            text: 'About',
+            icon: <HelpOutlineIcon />,
+        },
+        {
+            text: 'Services',
+            icon: <TuneIcon />,
+        },
+        {
+            text: 'Contact ',
+            icon: <EmailIcon />,
+        },
+    ];
+
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
             <AppBar position="fixed" open={open}>
-                <Toolbar>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        onClick={handleDrawerOpen}
-                        edge="start"
-                        sx={{
-                            marginRight: 5,
-                            ...(open && { display: 'none' }),
-                        }}>
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant="h6" noWrap component="div">
-                        Mini variant drawer
-                    </Typography>
+                <Toolbar sx={{ justifyContent: 'space-between' }}>
+                    <Box sx={{ display: 'flex' }}>
+                        <IconButton
+                            color="inherit"
+                            aria-label="open drawer"
+                            onClick={handleDrawerOpen}
+                            edge="start"
+                            sx={{
+                                marginRight: 5,
+                                ...(open && { display: 'none' }),
+                            }}>
+                            <MenuIcon />
+                        </IconButton>
+                        <Logo />
+                    </Box>
+                    <Box sx={{ display: 'flex' }}>
+                        <LoginBtn />
+                        <RegisterBtn />
+                    </Box>
                 </Toolbar>
             </AppBar>
             <Drawer variant="permanent" open={open}>
@@ -132,47 +162,9 @@ const Navbar = () => {
                 </DrawerHeader>
                 <Divider />
                 <List>
-                    {['Inbox', 'Starred', 'Send email', 'Drafts'].map(
-                        (text, index) => (
-                            <ListItem
-                                key={text}
-                                disablePadding
-                                sx={{ display: 'block' }}>
-                                <ListItemButton
-                                    sx={{
-                                        minHeight: 48,
-                                        justifyContent: open
-                                            ? 'initial'
-                                            : 'center',
-                                        px: 2.5,
-                                    }}>
-                                    <ListItemIcon
-                                        sx={{
-                                            minWidth: 0,
-                                            mr: open ? 3 : 'auto',
-                                            justifyContent: 'center',
-                                        }}>
-                                        {index % 2 === 0 ? (
-                                            // <InboxIcon />
-                                            <MailIcon />
-                                        ) : (
-                                            <MailIcon />
-                                        )}
-                                    </ListItemIcon>
-                                    <ListItemText
-                                        primary={text}
-                                        sx={{ opacity: open ? 1 : 0 }}
-                                    />
-                                </ListItemButton>
-                            </ListItem>
-                        )
-                    )}
-                </List>
-                <Divider />
-                <List>
-                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
+                    {listArr.map((item, index) => (
                         <ListItem
-                            key={text}
+                            key={item.text}
                             disablePadding
                             sx={{ display: 'block' }}>
                             <ListItemButton
@@ -187,21 +179,17 @@ const Navbar = () => {
                                         mr: open ? 3 : 'auto',
                                         justifyContent: 'center',
                                     }}>
-                                    {index % 2 === 0 ? (
-                                        // <InboxIcon />
-                                        <MailIcon />
-                                    ) : (
-                                        <MailIcon />
-                                    )}
+                                    {item.icon}
                                 </ListItemIcon>
                                 <ListItemText
-                                    primary={text}
+                                    primary={item.text}
                                     sx={{ opacity: open ? 1 : 0 }}
                                 />
                             </ListItemButton>
                         </ListItem>
                     ))}
                 </List>
+                <Divider />
             </Drawer>
             <Box
                 component="main"

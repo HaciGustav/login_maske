@@ -5,9 +5,8 @@ import './App.css';
 import Home from './pages/Home';
 import AppRouter from './router/AppRouter';
 
-
 function App() {
-    const [darkMode, setDarkMode] = useState('light');
+    const [darkMode, setDarkMode] = useState('dark');
     const theme = createTheme({
         palette: {
             mode: `${darkMode}`,
@@ -23,8 +22,8 @@ function App() {
     return (
         <ThemeProvider theme={theme}>
             <AppRouter />
-       </ThemeProvider>
+        </ThemeProvider>
     );
 }
 
-export default App; 
+export default App;
