@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import AppRouter from './router/AppRouter';
 
 function App() {
-    const [darkMode, setDarkMode] = useState('dark');
+    const [darkMode, setDarkMode] = useState('light');
     const theme = createTheme({
         palette: {
             mode: `${darkMode}`,
@@ -19,9 +19,13 @@ function App() {
     const handleDarkModeSwitch = () => {
         setDarkMode((prevState) => (prevState === 'light' ? 'dark' : 'light'));
     };
+
     return (
         <ThemeProvider theme={theme}>
-            <AppRouter />
+            <AppRouter
+                darkMode={darkMode}
+                handleDarkModeSwitch={handleDarkModeSwitch}
+            />
         </ThemeProvider>
     );
 }

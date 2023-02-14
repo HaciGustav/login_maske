@@ -1,15 +1,23 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from '../components/Navbar';
-import Navigation from '../components/navigation/Navigation';
+// import Navigation from '../components/navigation/Navigation';
 import Home from '../pages/Home';
+import Login from '../pages/Login';
 
-const AppRouter = () => {
+const AppRouter = ({ darkMode, handleDarkModeSwitch }) => {
     return (
         <BrowserRouter>
             <Routes>
-                {/* <Route path="/" element={<Navigation />}> */}
-                <Route path="/" element={<Navbar />}>
+                <Route path="/" element={<Login />} />
+                <Route
+                    path="/home"
+                    element={
+                        <Navbar
+                            darkMode={darkMode}
+                            handleDarkModeSwitch={handleDarkModeSwitch}
+                        />
+                    }>
                     <Route index element={<Home />} />
                 </Route>
             </Routes>

@@ -13,13 +13,18 @@ console.log(tableData[0]);
 
 const DataTable = () => {
     const [typ, setTyp] = useState('');
-    const [data, setData] = useState(tableData);
+    const [data] = useState(tableData);
 
     return (
         <TableContainer component={Paper}>
-            <Table sx={{ maxWidth: '90%' }} aria-label="simple table">
+            <Table sx={{ maxWidth: '100%' }} aria-label="simple table">
                 <TableHead>
-                    <TableRow>
+                    <TableRow sx={{ backgroundColor: '#666' }}>
+                        <TableCell
+                            align="center"
+                            sx={{ p: 0, fontWeight: '600' }}>
+                            #
+                        </TableCell>
                         <TableCell sx={{ p: 0 }}>
                             <SelectTyp typ={typ} setTyp={setTyp} />
                         </TableCell>
@@ -52,14 +57,24 @@ const DataTable = () => {
                 <TableBody>
                     {data
                         .filter((item) => item.typ === typ || typ === '')
-                        .map((row) => (
+                        .map((row, i) => (
                             <TableRow
                                 key={row.nummer}
                                 sx={{
                                     '&:last-child td, &:last-child th': {
                                         border: 0,
                                     },
+                                    backgroundColor:
+                                        row.typ === 'Zähler'
+                                            ? '#9ddbf850'
+                                            : '#11577750',
                                 }}>
+                                <TableCell
+                                    component="th"
+                                    align="center"
+                                    scope="row">
+                                    {i}
+                                </TableCell>
                                 <TableCell component="th" scope="row">
                                     {row.typ}
                                 </TableCell>

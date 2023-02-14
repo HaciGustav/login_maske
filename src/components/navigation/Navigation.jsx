@@ -1,4 +1,4 @@
-import { Avatar, Button, List, Paper, Typography } from '@mui/material';
+import { List, Paper } from '@mui/material';
 import { Box } from '@mui/system';
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -17,8 +17,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import EmailIcon from '@mui/icons-material/Email';
 import TuneIcon from '@mui/icons-material/Tune';
-import logo_a from '../../assets/logo-a.png';
-import logo from '../../assets/Logo.jpg';
+
 import Logo from '../Logo';
 import { LoginBtn, RegisterBtn } from '../Buttons';
 

@@ -1,4 +1,3 @@
-import { palette } from '@mui/system';
 import styled from 'styled-components';
 
 export const FlexContainer = styled.div`
