@@ -2,7 +2,7 @@ import { createTheme, ThemeProvider } from '@mui/material';
 import { blueGrey } from '@mui/material/colors';
 import { useState } from 'react';
 import './App.css';
-import Home from './pages/Home';
+
 import AppRouter from './router/AppRouter';
 
 function App() {

@@ -8,7 +8,7 @@ const SelectTyp = ({ setTyp, typ }) => {
     const handleChange = (event) => {
         setTyp(event.target.value);
     };
-    console.log(typ);
+
     return (
         <div>
             <FormControl sx={{ m: 1, minWidth: 120 }}>

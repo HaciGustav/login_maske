@@ -1,10 +1,7 @@
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-
 import { Form } from 'formik';
-
 import * as Yup from 'yup';
-import { useState } from 'react';
 import { Button } from '@mui/material';
 
 export const loginSchema = Yup.object().shape({
@@ -25,7 +22,6 @@ export const loginSchema = Yup.object().shape({
 });
 
 const LoginForm = ({ values, handleChange, errors, touched, handleBlur }) => {
-    const [loading, setLoading] = useState(false);
     console.log(values);
 
     return (
