@@ -25,14 +25,14 @@ const Login = () => {
                     }}>
                     <Grid item xs={12} mb={3}>
                         <Typography variant="h3" color="primary" align="center">
-                            Mehmet
+                            Unternehmen
                         </Typography>
                     </Grid>
 
                     <Grid item xs={12} sm={10} md={6}>
                         <Avatar
                             sx={{
-                                backgroundColor: 'secondary.light',
+                                backgroundColor: 'primary',
                                 m: 'auto',
                                 width: 40,
                                 height: 40,
@@ -43,7 +43,7 @@ const Login = () => {
                             variant="h4"
                             align="center"
                             mb={4}
-                            color="secondary.light">
+                            color="primary">
                             Login
                         </Typography>
 

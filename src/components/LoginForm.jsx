@@ -22,8 +22,6 @@ export const loginSchema = Yup.object().shape({
 });
 
 const LoginForm = ({ values, handleChange, errors, touched, handleBlur }) => {
-    console.log(values);
-
     return (
         <Form>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
